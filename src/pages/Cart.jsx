@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
-import ProductVisual from "../components/ProductVisual.jsx";
+import { ProductImageMedia } from "../components/VideoMedia.jsx";
 import { formatPrice } from "../data/products.js";
 
 export default function Cart({
@@ -71,7 +71,12 @@ export default function Cart({
                 layout
                 className="grid gap-4 rounded-[1.75rem] border border-copper/15 bg-white/60 p-3 shadow-product backdrop-blur-sm sm:grid-cols-[160px_1fr]"
               >
-                <ProductVisual product={line.product} size="sm" />
+                <ProductImageMedia
+                  desktop={line.product.imageDesktop}
+                  mobile={line.product.imageMobile}
+                  alt={line.product.name}
+                  className="h-40 rounded-[1.25rem]"
+                />
                 <div className="flex flex-col justify-between gap-5 p-2">
                   <div className="flex flex-col justify-between gap-4 sm:flex-row">
                     <div>

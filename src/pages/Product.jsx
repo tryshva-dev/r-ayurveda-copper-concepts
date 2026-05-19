@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Minus, Plus, ShieldCheck, ShoppingBag, Star } from "lucide-react";
-import ProductVisual from "../components/ProductVisual.jsx";
 import { formatPrice, products } from "../data/products.js";
 import ProductCard from "../components/ProductCard.jsx";
+import { ProductImageMedia, ProductVideoMedia } from "../components/VideoMedia.jsx";
 
 export default function Product({ product, navigate, addToCart }) {
   const [quantity, setQuantity] = useState(1);
@@ -46,7 +46,21 @@ export default function Product({ product, navigate, addToCart }) {
           transition={{ duration: 0.55 }}
           className="relative"
         >
-          <ProductVisual product={product} size="lg" floating />
+          {product.videoDesktop ? (
+            <ProductVideoMedia
+              desktop={product.videoDesktop}
+              mobile={product.videoMobile}
+              className="h-[34rem] rounded-[1.5rem]"
+            />
+          ) : (
+            <ProductImageMedia
+              desktop={product.imageDesktop}
+              mobile={product.imageMobile}
+              alt={product.name}
+              className="h-[34rem] rounded-[1.5rem] shadow-product"
+              imageClassName="transition duration-[1200ms] hover:scale-[1.025]"
+            />
+          )}
         </motion.div>
 
         <div className="rounded-[2rem] border border-copper/15 bg-white/62 p-5 shadow-product backdrop-blur-sm sm:p-8">

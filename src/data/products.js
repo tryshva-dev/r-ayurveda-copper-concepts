@@ -14,6 +14,10 @@ export const products = [
     color: "#b66a36",
     accent: "#7e241b",
     pattern: "hammered",
+    videoDesktop: "/product-video-desktop.mp4",
+    videoMobile: "/product-video-mobile.mp4",
+    imageDesktop: "/product-copper-utensils-3-desktop.jpeg",
+    imageMobile: "/product-copper-utensils-3-mobile.jpeg",
     description:
       "A pure copper everyday bottle with a warm hammered finish, jointless body, and secure leak-proof cap for desk, yoga, and travel routines.",
     highlights: ["Pure copper body", "Jointless profile", "Leak-proof cap"],
@@ -33,6 +37,9 @@ export const products = [
     color: "#c08a2b",
     accent: "#d8a929",
     pattern: "lotus",
+    videoDesktop: "/products-video-desktop.mp4",
+    imageDesktop: "/product-diyas-1-desktop.jpeg",
+    imageMobile: "/product-diyas-1-mobile.jpeg",
     description:
       "A polished brass diya set for pooja corners, festive styling, entry consoles, and gifting hampers.",
     highlights: ["Set of five diyas", "Polished brass finish", "Festive gifting"],
@@ -52,6 +59,8 @@ export const products = [
     color: "#c8743d",
     accent: "#2d5d4a",
     pattern: "hammered",
+    imageDesktop: "/product-copper-utensils-2-desktop.jpeg",
+    imageMobile: "/product-copper-utensils-2-mobile.jpeg",
     description:
       "A hammered copper urli for floating flowers, tealights, console styling, and festive tables.",
     highlights: ["Hammered texture", "Decor centerpiece", "Flower and diya styling"],
@@ -71,6 +80,8 @@ export const products = [
     color: "#a85e34",
     accent: "#17110d",
     pattern: "bands",
+    imageDesktop: "/product-copper-utensils-3-desktop.jpeg",
+    imageMobile: "/product-copper-utensils-3-mobile.jpeg",
     description:
       "A lighter matte bottle with an easy-carry silhouette and snug cap for commutes, studios, and morning walks.",
     highlights: ["Lightweight carry", "Matte texture", "Daily-use capacity"],
@@ -90,6 +101,8 @@ export const products = [
     color: "#bd7440",
     accent: "#7e241b",
     pattern: "etched",
+    imageDesktop: "/product-diyas-2-desktop.jpeg",
+    imageMobile: "/product-diyas-2-mobile.jpeg",
     description:
       "Two etched metallic diyas with a temple-border detail for pooja rooms, mandirs, and festive trays.",
     highlights: ["Set of two", "Etched border", "Mandir-ready"],
@@ -109,6 +122,8 @@ export const products = [
     color: "#7e241b",
     accent: "#e2a06a",
     pattern: "lotus",
+    imageDesktop: "/product-copper-utensils-2-desktop.jpeg",
+    imageMobile: "/product-copper-utensils-2-mobile.jpeg",
     description:
       "A statement decorative copper bottle with a deep temple-red lotus print and polished copper shoulder.",
     highlights: ["Lotus artwork", "Decor display", "Premium gifting"],
@@ -128,6 +143,8 @@ export const products = [
     color: "#d8a929",
     accent: "#2d5d4a",
     pattern: "kit",
+    imageDesktop: "/product-copper-utensils-3-desktop.jpeg",
+    imageMobile: "/product-copper-utensils-3-mobile.jpeg",
     description:
       "A simple care kit for maintaining copper shine with a soft cloth, natural cleaning blend, and care card.",
     highlights: ["Natural cleaning blend", "Soft polish cloth", "Care guide"],
@@ -147,6 +164,8 @@ export const products = [
     color: "#9e5630",
     accent: "#d8a929",
     pattern: "bands",
+    imageDesktop: "/product-copper-utensils-2-desktop.jpeg",
+    imageMobile: "/product-copper-utensils-2-mobile.jpeg",
     description:
       "A premium metal thali-inspired decor set with brushed surfaces and fine golden banding for festive tables.",
     highlights: ["Four-piece decor set", "Festive packaging", "Brushed finish"],

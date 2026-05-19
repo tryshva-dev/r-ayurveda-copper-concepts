@@ -5,6 +5,7 @@ import Home from "./pages/Home.jsx";
 import Listing from "./pages/Listing.jsx";
 import Product from "./pages/Product.jsx";
 import Cart from "./pages/Cart.jsx";
+import Rituals from "./pages/Rituals.jsx";
 import { products } from "./data/products.js";
 
 const getInitialRoute = () => {
@@ -12,6 +13,7 @@ const getInitialRoute = () => {
   if (path.startsWith("/products/")) {
     return { name: "product", productId: path.split("/products/")[1] };
   }
+  if (path === "/rituals") return { name: "rituals" };
   if (path === "/listing") return { name: "listing" };
   if (path === "/cart") return { name: "cart" };
   return { name: "home" };
@@ -100,6 +102,7 @@ export default function App() {
   };
 
   let page = <Home {...pageProps} />;
+  if (route.name === "rituals") page = <Rituals {...pageProps} />;
   if (route.name === "listing") page = <Listing {...pageProps} />;
   if (route.name === "product") {
     const product = products.find((item) => item.id === route.productId);

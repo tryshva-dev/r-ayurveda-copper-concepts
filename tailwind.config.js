@@ -3,22 +3,26 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        display: ['"Bodoni Moda"', '"Bodoni 72"', "Didot", '"Libre Baskerville"', "Georgia", "serif"],
+        body: ["Montserrat", "Avenir", "Helvetica Neue", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
       colors: {
-        basalt: "#17110d",
-        copper: "#b36a38",
-        "copper-dark": "#6f321c",
-        "copper-light": "#e2a06a",
+        basalt: "#271811",
+        copper: "#8c4f10",
+        "copper-dark": "#894d0d",
+        "copper-light": "#ffb77b",
         turmeric: "#d8a929",
-        sandal: "#f2dfbf",
-        "temple-red": "#7e241b",
+        sandal: "#ffeae1",
+        "temple-red": "#8d4938",
         neem: "#2d5d4a",
-        jasmine: "#fff8ec",
-        smoke: "#2b2018",
+        jasmine: "#fff8f6",
+        smoke: "#3d2d25",
       },
       boxShadow: {
-        ember: "0 24px 90px rgba(111, 50, 28, 0.28)",
-        product: "0 28px 70px rgba(76, 38, 23, 0.18)",
-        nav: "0 18px 40px rgba(38, 20, 10, 0.12)",
+        ember: "5px 5px 0 rgba(39, 24, 17, 0.12)",
+        product: "4px 4px 0 rgba(39, 24, 17, 0.1)",
+        nav: "0 2px 0 rgba(39, 24, 17, 0.12)",
       },
       backgroundImage: {
         "temple-grid":
