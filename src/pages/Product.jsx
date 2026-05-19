@@ -51,6 +51,7 @@ export default function Product({ product, navigate, addToCart }) {
               desktop={product.videoDesktop}
               mobile={product.videoMobile}
               className="h-[34rem] rounded-[1.5rem]"
+              eager
             />
           ) : (
             <ProductImageMedia

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Pause, Play, ShoppingBag, Volume2 } from "lucide-react";
 
@@ -12,23 +13,50 @@ export function ResponsiveVideo({
   className = "",
   videoClassName = "",
   label,
+  eager = false,
   children,
 }) {
+  const containerRef = useRef(null);
+  const [shouldLoad, setShouldLoad] = useState(eager);
   const mobileIsImage = isImage(mobile);
+  const activeDesktop = shouldLoad ? desktop : undefined;
+  const activeMobile = shouldLoad ? mobile || desktop : undefined;
+
+  useEffect(() => {
+    if (eager || shouldLoad) return undefined;
+    const node = containerRef.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "420px 0px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [eager, shouldLoad]);
 
   return (
-    <div className={`overflow-hidden bg-sandal ${className}`}>
+    <div ref={containerRef} className={`overflow-hidden bg-sandal ${className}`}>
       {mobileIsImage ? (
         <img
           src={mobile}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
           alt={label || "Lifestyle product scene"}
           className={`block h-full w-full object-cover md:hidden ${videoClassName}`}
         />
       ) : (
         <video
           className={`block h-full w-full object-cover md:hidden ${videoClassName}`}
-          src={mobile || desktop}
+          src={activeMobile}
           poster={poster}
+          preload={eager ? "auto" : "none"}
           autoPlay
           muted
           loop
@@ -37,8 +65,9 @@ export function ResponsiveVideo({
       )}
       <video
         className={`hidden h-full w-full object-cover md:block ${videoClassName}`}
-        src={desktop}
+        src={activeDesktop}
         poster={poster}
+        preload={eager ? "auto" : "none"}
         autoPlay
         muted
         loop
@@ -93,13 +122,14 @@ export function ShoppableTag({ children, className = "" }) {
   );
 }
 
-export function ProductVideoMedia({ desktop, mobile, className = "" }) {
+export function ProductVideoMedia({ desktop, mobile, className = "", eager = false }) {
   return (
     <ResponsiveVideo
       desktop={desktop}
       mobile={mobile || desktop}
       className={`relative ${className}`}
       videoClassName="transition duration-700 group-hover:scale-[1.03]"
+      eager={eager}
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-basalt/18 via-transparent to-transparent" />
       <span className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-jasmine text-copper-dark shadow-product">
